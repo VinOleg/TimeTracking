@@ -1,0 +1,13 @@
+﻿@model TimeTracking.Models.Users
+@{
+    ViewBag.Title = "Удалить пользователя";
+}
+<form asp-controller="Home" asp-action="Delete" method="post">
+    <div class="form-group">
+        <h1>ВЫ ТОЧНО ХОТИТЕ УДАЛИТЬ?</h1>
+        <a asp-action="Index" asp-controller="Home">
+            <input type="button" class="btn btn-primary" value="Вернуться"/>
+        </a>
+        <input type="submit" class="btn btn-danger" value="Удалить" />
+    </div>
+</form>

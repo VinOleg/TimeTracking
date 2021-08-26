@@ -1,0 +1,31 @@
+﻿@model TimeTracking.Models.Users
+@{
+    ViewBag.Title = "Добавление пользователя";
+    <form asp-action="create" asp-controller="home">
+        <div class="form-group">
+            <label for="Email" class="col-form-label ">Email:</label>
+            <input type="email" class="form-control" asp-for="Email" placeholder="email@@email.ru" required="required">
+        </div>
+        <div class="form-group">
+            <label for="Surname" class="col-form-label mt-1">Фамилия:</label>
+            <input type="text" class="form-control" asp-for="Surname" placeholder="Фамилия" required="required">
+        </div>
+        <div class="form-group">
+            <label for="FirstName" class="col-form-label mt-1">Имя:</label>
+            <input type="text" class="form-control" asp-for="FirstName" placeholder="Имя" required="required">
+        </div>
+        <div class="form-group">
+            <label for="FirstName" class="col-form-label mt-1">Отчество:</label>
+            <input type="text" class="form-control" asp-for="PatroName" placeholder="Отчество">
+        </div>
+        <div class="alert alert-danger" role="alert">
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Добавить пользователя" class="btn btn-primary">
+        </div>
+    </form>
+    
+}
+
+

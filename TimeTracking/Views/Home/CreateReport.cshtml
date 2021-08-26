@@ -1,0 +1,28 @@
+﻿@model TimeTracking.Models.DailyWork
+@{
+    ViewBag.Title = "Добавление отчета";
+    <form asp-action="createreport" asp-controller="home">
+        <div class="form-group">
+            <label for="Email" class="col-form-label ">Примечание:</label>
+            <input type="text" class="form-control" asp-for="Note" placeholder="Примечание" required="required">
+        </div>
+        <div class="form-group">
+            <label for="Surname" class="col-form-label mt-1">Часы:</label>
+            <input type="text" class="form-control" asp-for="Hour" placeholder="Часы" required="required">
+        </div>
+        <div class="form-group">
+            <label for="FirstName" class="col-form-label mt-1">Дата:</label>
+            <input type="date" class="form-control" asp-for="Date" placeholder="Дата" required="required" value="2021-08-23">
+        </div>
+
+            <input type="hidden" class="form-control" asp-for="UserID" placeholder="ид" value="@ViewData["UserID"]">
+        <div class="alert alert-danger" role="alert">
+            @Html.ValidationMessageFor(m => m.Note)
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Добавить отчет" class="btn btn-primary">
+        </div>
+    </form>
+}
+
+
